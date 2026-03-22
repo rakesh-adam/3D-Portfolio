@@ -8,14 +8,14 @@ pageTurnBtn.forEach((el, index) => {
         const pageTurnId = el.getAttribute('data-page');
         const pageTurn = document.getElementById(pageTurnId);
 
-        if(pageTurn.classList.contains('turn')){
+        if (pageTurn.classList.contains('turn')) {
             pageTurn.classList.remove('turn');
 
             setTimeout(() => {
                 pageTurn.style.zIndex = 2 - index;
             }, 500);
 
-        }else{
+        } else {
             pageTurn.classList.add('turn');
 
             setTimeout(() => {
@@ -26,7 +26,6 @@ pageTurnBtn.forEach((el, index) => {
 });
 
 
-// contact me button when click
 const pages = document.querySelectorAll('.book-page.page-right');
 const contactMeBtn = document.querySelector('.btn.contact-me');
 
@@ -37,25 +36,23 @@ contactMeBtn.onclick = () => {
             page.classList.add('turn');
             setTimeout(() => {
                 page.style.zIndex = 20 + index;
-            },500);
+            }, 500);
         }, (index + 1) * 200 + 100)
     });
 }
 
 
-// create reverse index function
 let totalPages = pages.length;
 let pageNumber = 0;
 
 function reverseIndex() {
     pageNumber--;
-    if(pageNumber < 0){
+    if (pageNumber < 0) {
         pageNumber = totalPages - 1;
     }
 }
 
 
-// back profile button when click
 const backProfileBtn = document.querySelector('.back-profile');
 
 backProfileBtn.onclick = () => {
@@ -75,12 +72,10 @@ backProfileBtn.onclick = () => {
 }
 
 
-// opening animation
 const coverRight = document.querySelector('.cover.cover-right');
 const pageLeft = document.querySelector('.book-page.page-left');
 
 
-// open animation (cover right animation)
 setTimeout(() => {
     coverRight.classList.add('turn');
 }, 2100);
